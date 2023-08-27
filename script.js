@@ -1,21 +1,60 @@
-function countdown(callback) {
-  var count = 10;
-  var interval = setInterval(function() {
-    count--;
-    document.getElementById("countdown").innerHTML = count;
-    if (count === 0) {
-      clearInterval(interval);
-      callback(function() {
-        console.log("Callback inside the callback");
-      });
-    }
-  }, 1000);
+var b = document.getElementById('hell')
+let a = () => {
+    b.innerText = '10';
+    setTimeout(() => {
+        b.innerText = '9'
+        setTimeout(() => {
+            b.innerText = '8'
+            setTimeout(() => {
+                b.innerText = '7'
+                setTimeout(() => {
+                    b.innerText = '6'
+                    setTimeout(() => {
+                        b.innerText = '5'
+                        setTimeout(
+                            () => {
+                                b.innerText = '4'
+                                setTimeout(() => {
+                                    b.innerText = '3'
+                                    setTimeout(
+                                        () => {
+                                            b.innerText = '2'
+                                            setTimeout(() => {
+                                                b.innerText = '1'
+                                                setTimeout(() => {
+                                                    b.innerText = 'Happy Independence Day'
+                                                    //console.log(b.innerText )
+
+                                                }, 1000)
+                                                //console.log(b.innerText )
+
+                                            }, 1000)
+                                            //console.log(b.innerText )
+                                        }, 1000)
+                                    //console.log(b.innerText )
+                                }, 1000)
+                                //console.log(b.innerText )
+                            }, 1000)
+                        //console.log(b.innerText )
+
+                    }, 1000)
+                    //console.log(b.innerText )
+                }, 1000)
+                //console.log(b.innerText )
+
+            }, 1000)
+            //console.log(b.innerText )
+
+        }, 1000)
+        // console.log(b.innerText )
+
+    }, 1000);
+    //console.log(b.innerText)
+
 }
 
-countdown(function(callback1) {
-  document.getElementById("countdown").innerHTML = "Happy Independence Day!!";
-  callback1(function(callback2) {
-    console.log("Second callback");
-    callback2();
-  });
-});
+
+
+
+
+window.onload = a();
